@@ -13,9 +13,9 @@ class User extends Base
     public function columns()
     {
         $this->tableField('user', [$this->increments(),
-                                   $this->string('admin'),
-                                   $this->string('password'),
-                                   $this->timestamps()
+            $this->string('admin'),
+            $this->string('password'),
+            $this->timestamps()
         ]);
     }
 }
