@@ -10,12 +10,18 @@ namespace app\common\model;
 
 class User extends Base
 {
-    public function columns()
+    protected $table_name = 'user';
+
+    protected function columns()
     {
-        $this->tableField('user', [$this->increments(),
-            $this->string('admin'),
-            $this->string('password'),
-            $this->timestamps()
-        ]);
+        return [self::increments('id', '主键id'),
+                self::string('admin', '账号'),
+                self::string('password', '密码', 255),
+                self::string('email', '邮箱', 80),
+                self::int('gender', '性別', 2),
+                self::text('content', '内容'),
+                self::datetime('login_time', '登录'),
+                self::timestamp('date_time', '时间')
+        ];
     }
 }

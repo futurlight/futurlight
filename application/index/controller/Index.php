@@ -4,12 +4,12 @@ namespace app\index\controller;
 
 use app\common\controller\BaseController;
 use app\common\model\User;
+use think\Controller;
 
-class Index extends BaseController
+class Index extends Controller
 {
     public function index()
     {
-        $model = new User();
-        $model->columns();
+        return 'hi';
     }
 }
